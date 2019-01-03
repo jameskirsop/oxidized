@@ -123,7 +123,7 @@ module Oxidized
       secure = Oxidized.config.input.ssh.secure?
       ssh_opts = {
         port:         (vars(:ssh_port) || 22).to_i,
-        paranoid:     secure,
+        verify_host_key:     secure,
         keepalive:    vars(:ssh_no_keepalive) ? false : true,
         password:     @node.auth[:password],
         timeout:      Oxidized.config.timeout,
